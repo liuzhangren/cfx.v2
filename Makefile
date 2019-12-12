@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 pjName := cfx.v2
 
 docker:
