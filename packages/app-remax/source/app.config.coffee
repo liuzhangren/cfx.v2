@@ -4,6 +4,7 @@ pages = [
   'pages/index/index'
   'pages/panel/index'
   'pages/_jsx_for_cfx/index'
+  'pages/basic/color/index'
 ]
 
 module.exports = {
