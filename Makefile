@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 pjName := cfx.v2
 
 docker:
@@ -6,7 +7,7 @@ docker:
 		--rm \
 		-ti \
 		-p 3999:9999 \
-		-v $$(pwd):/root/${pjName} \
+		-v $(PWD):/root/${pjName} \
 		mooxe/node \
 		/bin/bash
 
