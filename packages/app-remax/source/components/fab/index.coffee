@@ -1,4 +1,4 @@
-import React { useState, useEffect} from React
+import React, { useState, useEffect} from React
 import classNames from 'classnames'
 import CFX  from '../../utils/cfx'
 import CFS from '../../utils/cfs'
