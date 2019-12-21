@@ -1,31 +1,46 @@
-import React { useState, useEffect} from React
+import React, { useState, useEffect} from 'react'
 import classNames from 'classnames'
 import CFX  from '../../utils/cfx'
 import CFS from '../../utils/cfs'
-import PropTypes from 'prop-types'
-
-# import AtComponent from '../../common/component'
-
+import mergeStyle from '../../common/components'
+import styl from 'cfx.styl'
+import style from './index.cfs'
+import './index.cfs.css'
 import {
   Text
 } from 'remax/wechat'
+
+S = CFS {
+  style
+  styl
+}
 
 C = CFX {
   Text
 }
 
+customStyle = ''
+className = ''
+prefixClass = 'at-icon'
+value = ''
+color = ''
+size = 24
+onClick = () => {}
+
 export default (props) =>
-  [
+  {
     customStyle
     className
-    prefixClass
+    prefixClass = 'at-icon'
     value
     size
     color  
-  ] = props
+   } = props
+
+  handleClick = () =>
+    props.onClick()
 
   rootStyle = {
-    fontSize: "#{Taro.pxTransform parseInt(size) * 2)}"
     color
   }
   iconName = if value then "#{prefixClass}-#{value}" else ''
@@ -37,5 +52,5 @@ export default (props) =>
         iconName
         className
       )
-    style: mergeStyle(rootStyle, customStyle)
-    onClick: handleClick.bind(this)
+    style: mergeStyle rootStyle, customStyle
+    onClick: handleClick
