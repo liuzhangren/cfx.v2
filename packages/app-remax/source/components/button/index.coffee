@@ -93,9 +93,8 @@ export default (props) =>
 
   rootClassName = [ S.atButton ]
   classObject = 
-    ["at-button--#{SIZE_CLASS[size]}"]: SIZE_CLASS[size]
+    # ["at-button--#{SIZE_CLASS[size]}"]: SIZE_CLASS[size]
     'at-button--disabled': disabled
-    ["at-button--#{type}"]: TYPE_CLASS[type]
     'at-button--circle': circle
     'at-button--full': full
   loadingColor = 
@@ -108,10 +107,11 @@ export default (props) =>
       # <View className='at-button__icon'><AtLoading color={loadingColor} size={loadingSize} /></View>
     rootClassName.push 'at-button--icon'
 
+  typeButton = if type is 'primary' then S.atButtonPrimary else S.atButtonSecondary
 
   button = 
     C.Button
-      className: 'wxbutton'
+      className: 'at-button__wxbutton'
       formType: formType
       openType: openType
       lang: lang
@@ -128,7 +128,7 @@ export default (props) =>
       onContact: onContact
   
   C.View
-    className: classNames rootClassName, classObject, props.className
+    className: classNames rootClassName, classObject, props.className, typeButton
     style: customStyle
     onClick: onClick
   ,

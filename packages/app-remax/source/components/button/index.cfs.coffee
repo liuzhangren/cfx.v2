@@ -18,6 +18,22 @@ export default ({
     color: c
   }
 }) =>
+  atButtonPrimary:
+    color: color.text.base.inverse
+    border: js [
+      px 1
+      'solid'
+      color.brand.default
+    ]
+    background: color.brand.default
+  atButtonSecondary: 
+    color: color.brand.default
+    border: js [
+      px 1
+      'solid'
+      color.brand.default
+    ]
+    backgroundColor: '#fff'
   atButton: {
     position: 'relative'
     display: 'flex'
@@ -82,24 +98,6 @@ export default ({
 
       '&:active':
         opacity: opacity.disabled
-
-    '&--primary':
-      color: color.text.base.inverse
-      border: js [
-        px 1
-        'solid'
-        color.brand.default
-      ]
-      background: color.brand.default
-
-    '&--secondary': 
-      color: color.brand.default
-      border: js [
-        px 1
-        'solid'
-        color.brand.default
-      ]
-      backgroundColor: '#fff'
 
     '&--circle':
       borderRadius: px (92 / 2)

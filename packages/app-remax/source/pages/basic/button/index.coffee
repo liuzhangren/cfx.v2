@@ -19,9 +19,16 @@ import AtButton from '../../../components/button'
 
 C = CFX {
   AtButton
+  View
 }
 
 export default () =>
-  C.AtButton
-    type: 'primary'
-  , '按钮'
+  C.View {}
+  ,
+    C.AtButton
+      type: 'primary'
+    , '按钮primary'
+
+    C.AtButton
+      type: 'secondary'
+    , '按钮secondary'

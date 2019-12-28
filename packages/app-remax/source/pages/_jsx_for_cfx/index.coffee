@@ -4,6 +4,7 @@ import {
   View
   Text
   Image
+  Button
 } from 'remax/wechat'
 
 export default =>
@@ -22,4 +23,12 @@ export default =>
       src=""
     >
     </Image>
+    <Button
+      onClick=''
+      key=''
+      style=''
+      className=''
+    >
+
+    </Button>
   </View>
