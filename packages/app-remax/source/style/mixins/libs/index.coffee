@@ -173,9 +173,9 @@ justifyContent = (
     then 'justify'
     else value
 
-flex = (
+flex = ({
   joinS: js
-) => (
+}) => (
   fg = 1
   fs = null
   fb = null
@@ -201,11 +201,9 @@ hairlineCommon = () =>
   boxSizing: 'border-box'
   pointerEvents: 'none'
 
-hairlineBase = (
-  {
-    per as p
-  }
-) => (
+hairlineBase = ({
+  per: p
+}) => (
   color
   style
 ) =>
@@ -237,8 +235,6 @@ hairlineSurround = (
   '::after': {
     hairlineBase(color, style)...
     borderWidth: width
-  }
-    
   }
 
 hairlineTop = (
@@ -430,17 +426,20 @@ hairlineRightRelative = (
   }
 
 line = (num = 1) =>
-  if num == 1
-  then 
+  if num is 1
+  then {
     overflow: 'hidden'
     textOverflow: 'ellipsis'
     whiteSpace: 'nowrap'
-  else
+  }
+  else {
     overflow: 'hidden'
     textOverflow: 'ellipsis'
     display: '-webkit-box'
     '-webkitLineClamp': num
     '-webkitBoxOrient': 'vertical'
+  }
+    
 
 overlay = (
   {

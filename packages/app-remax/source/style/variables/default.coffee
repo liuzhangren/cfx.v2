@@ -1,5 +1,6 @@
 import tint from '../mixins/libs/tint'
-
+colorBorderBase = '#C5D9E8'
+colorBgLight = '#ECF5FD' 
 hd = 2 # 基本单位
 
 # The Color of O2Team Brand
@@ -89,7 +90,7 @@ color =
 # Border Radius
 border = ({
   px
-  per
+  p: per
 }) =>
   radius:
     sm: px 2 * hd
