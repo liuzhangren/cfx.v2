@@ -1,4 +1,8 @@
+<<<<<<< HEAD:packages/app-remax/source/components/fab/index.coffee
+import React, { useState, useEffect} from React
+=======
 import React, { useState, useEffect} from 'react'
+>>>>>>> origin/member/zhangren:packages/app-remax/components/fab/index.coffee
 import classNames from 'classnames'
 import CFX  from '../../utils/cfx'
 import CFS from '../../utils/cfs'
