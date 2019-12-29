@@ -41,22 +41,22 @@ TYPE_CLASS =
 export default (props) =>
   onClick = () =>
     if !props.disabled
-      props.onClick
+      props.onClick()
 
   onGetUserInfo = () => 
-    props.onGetUserInfo
+    props.onGetUserInfo()
 
   onContact = () => 
-    props.onContact
+    props.onContact()
 
   onGetPhoneNumber = () => 
-    props.onGetPhoneNumber
+    props.onGetPhoneNumber()
 
   onError = () => 
-    props.onError
+    props.onError()
 
   onOpenSetting = () => 
-    props.onOpenSetting
+    props.onOpenSetting()
 
   onSubmit = () =>
     console.log 'submit'
@@ -94,8 +94,8 @@ export default (props) =>
   rootClassName = [ S.atButton ]
   classObject = 
     # ["at-button--#{SIZE_CLASS[size]}"]: SIZE_CLASS[size]
-    'at-button--disabled': disabled
-    'at-button--circle': circle
+    # 'at-button--disabled': disabled
+    # 'at-button--circle': circle
     'at-button--full': full
   loadingColor = 
     if type is 'primary' then '#fff' else ''
@@ -104,11 +104,14 @@ export default (props) =>
     component = 
       C.View 
         className: 'at-button__icon'
+      , 'hhhhh'
       # <View className='at-button__icon'><AtLoading color={loadingColor} size={loadingSize} /></View>
     rootClassName.push 'at-button--icon'
 
   typeButton = if type is 'primary' then S.atButtonPrimary else S.atButtonSecondary
-
+  disabledButton = if disabled is true then S.atButtonDisabled else ''
+  smallButton = if size is 'small' then S.atButtonSmall else ''
+  circleButton = if circle then S.atButtonCircle else ''
   button = 
     C.Button
       className: 'at-button__wxbutton'
@@ -128,7 +131,7 @@ export default (props) =>
       onContact: onContact
   
   C.View
-    className: classNames rootClassName, classObject, props.className, typeButton
+    className: classNames rootClassName, classObject, props.className, typeButton, disabledButton, smallButton, circleButton
     style: customStyle
     onClick: onClick
   ,

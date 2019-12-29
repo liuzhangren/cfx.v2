@@ -18,6 +18,23 @@ export default ({
     color: c
   }
 }) =>
+  atButtonSmall:
+    padding: js [
+      0 
+      (spacing {px}).h.md
+    ] 
+    width: 'auto'
+    minWidth: px 100
+    maxWidth: px 710
+    height: px 60
+    fontSize: (font {px}).size.base
+    lineHeight: px 58
+    '&.at-button--circle': 
+      borderRadius: px 30
+  atButtonCircle:
+    borderRadius: px 46
+    backgroundClip: 'border-box'
+    overflow: 'hidden'
   atButtonPrimary:
     color: color.text.base.inverse
     border: js [
@@ -25,7 +42,7 @@ export default ({
       'solid'
       color.brand.default
     ]
-    background: color.brand.default
+    background: "#{color.brand.default} !important"
   atButtonSecondary: 
     color: color.brand.default
     border: js [
@@ -34,6 +51,20 @@ export default ({
       color.brand.default
     ]
     backgroundColor: '#fff'
+
+  atButtonDisabled: 
+    opacity: opacity.disabled
+
+    '&:active':
+      opacity: opacity.disabled
+  atButtonActive: 
+    # opacity: opacity.active
+
+    '&:active':
+      opacity: opacity.active
+    
+  atButtonActive:
+    opacity: opacity.active
   atButton: {
     position: 'relative'
     display: 'flex'
@@ -47,11 +78,11 @@ export default ({
       (spacing {px}).h.xl
     ] 
     height: px 92
-    color: color.text.base.default
+    # color: color.text.base
     fontSize: (font {px}).size.lg
     lineHeight: px 90
     textAlign: 'center'
-    borderRadius: (border {px, p}).radius.md
+    # borderRadius: (border {px, p}).radius.md
     border: js [
       px 1
       'solid'
@@ -59,9 +90,7 @@ export default ({
     ]
     boxSizing: 'border-box'
     # line...
-
-    '&:active':
-      opacity: opacity.active
+      
     
     '&__icon':
       display: 'inline-block'
@@ -92,31 +121,6 @@ export default ({
       
     '&--active':
       opacity: opacity.active
-    
-    '&--disabled': 
-      opacity: opacity.disabled
-
-      '&:active':
-        opacity: opacity.disabled
-
-    '&--circle':
-      borderRadius: px (92 / 2)
-      backgroundClip: 'border-box'
-      overflow: 'hidden'
-
-    '&--small':
-      padding: js [
-        0 
-        (spacing {px}).h.md
-      ] 
-      width: 'auto'
-      minWidth: px 100
-      maxWidth: px 710
-      height: px 60
-      fontSize: (font {px}).size.base
-      lineHeight: px 58
-      '&.at-button--circle': 
-        borderRadius: px 30
 
     '&--full':
       width: p 100
